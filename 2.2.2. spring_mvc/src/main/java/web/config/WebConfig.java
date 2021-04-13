@@ -1,5 +1,7 @@
 package web.config;
 
+import Model.Car;
+import Service.ServiceCarImp;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -10,6 +12,8 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.thymeleaf.spring5.SpringTemplateEngine;
 import org.thymeleaf.spring5.templateresolver.SpringResourceTemplateResolver;
 import org.thymeleaf.spring5.view.ThymeleafViewResolver;
+
+import java.util.List;
 
 @Configuration
 @EnableWebMvc
@@ -22,6 +26,10 @@ public class WebConfig implements WebMvcConfigurer {
         this.applicationContext = applicationContext;
     }
 
+    @Bean
+    public List<Car> getCar(){
+        return new ServiceCarImp().returnCars(5);
+    }
 
     @Bean
     public SpringResourceTemplateResolver templateResolver() {
