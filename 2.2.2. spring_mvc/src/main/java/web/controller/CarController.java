@@ -10,12 +10,13 @@ import org.springframework.web.bind.annotation.GetMapping;
 import java.util.List;
 
 @Controller
+
 public class CarController {
 
 @Autowired
     List<Car> carList;
 
-@GetMapping(value = "/cars")
+    @GetMapping( "/cars")
     public String printCarTable(ModelMap carModel){
     carModel.addAttribute("carList", carList);
   return "cars";
