@@ -19,8 +19,7 @@ public class CarController {
     ServiceCarImp serviceCarImp = new ServiceCarImp();
 
     @GetMapping("/cars")
-    public String printCarTable(@RequestParam(value = "count", required = false) Integer count, ModelMap carModel) {
-        if (count == null) count = 5;
+    public String printCarTable(@RequestParam(defaultValue = "5") Integer count, ModelMap carModel) {
         carModel.addAttribute("carList", serviceCarImp.returnCars(count));
         return "cars";
     }
