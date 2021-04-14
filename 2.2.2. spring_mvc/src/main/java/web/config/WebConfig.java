@@ -28,12 +28,6 @@ public class WebConfig implements WebMvcConfigurer {
     }
 
     @Bean
-    public List<Car> getCar(){
-
-        return new ServiceCarImp().returnCars(5);
-    }
-
-    @Bean
     public SpringResourceTemplateResolver templateResolver() {
         SpringResourceTemplateResolver templateResolver = new SpringResourceTemplateResolver();
         templateResolver.setApplicationContext(applicationContext);
