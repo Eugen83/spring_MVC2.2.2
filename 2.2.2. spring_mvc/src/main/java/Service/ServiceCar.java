@@ -1,3 +1,4 @@
+/*
 package Service;
 
 import Model.Car;
@@ -5,5 +6,6 @@ import Model.Car;
 import java.util.List;
 
 public interface ServiceCar {
-    public List<Car> returnCars(int carCount);
+    public List<Car> listCar();
 }
+*/

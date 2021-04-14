@@ -1,7 +1,7 @@
 package web.config;
 
 import Model.Car;
-import Service.ServiceCarImp;
+//
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
