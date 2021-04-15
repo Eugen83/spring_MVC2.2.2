@@ -1,5 +1,5 @@
 
-package Model;
+/*package Model;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,5 +15,5 @@ public class CarModel {
         return car;
 
     }
-}
+}*/
 
