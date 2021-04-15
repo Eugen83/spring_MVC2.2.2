@@ -1,11 +1,9 @@
 package Service;
 
 import Model.Car;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
-
 
 public class ServiceCarImp implements ServiceCar {
 
@@ -23,9 +21,7 @@ public class ServiceCarImp implements ServiceCar {
 
    @Override
     public List<Car> returnCars(int carCount) {
-      return listCar().stream()
-                .limit(carCount)
-                .collect(Collectors.toList());
+      return listCar().stream().limit(carCount).collect(Collectors.toList());
     }
 
 }
