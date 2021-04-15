@@ -1,10 +1,15 @@
 package Service;
 
 import Model.Car;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
+import org.springframework.stereotype.Component;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
+@Component
 public class ServiceCarImp implements ServiceCar {
 
 
@@ -20,7 +25,8 @@ public class ServiceCarImp implements ServiceCar {
     }
 
    @Override
-    public List<Car> returnCars(int carCount) {
+
+      public List<Car> returnCars(int carCount) {
       return listCar().stream().limit(carCount).collect(Collectors.toList());
     }
 

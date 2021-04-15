@@ -20,15 +20,13 @@ import java.util.stream.Collectors;
 @Controller
 public class CarController {
 
-private ServiceCarImp serviceCar = new ServiceCarImp();
+ private ServiceCar serviceCar = new ServiceCarImp();
 
-@Autowired
-private List<Car> carList;
 
 
     @GetMapping("/cars")
     public String printCarTable(@RequestParam(defaultValue = "5") Integer count, ModelMap carModel) {
-        carModel.addAttribute("carList", serviceCar.returnCars(count));
+        carModel.addAttribute("carList", serviceCar(count));
         return "cars";
     }
 
