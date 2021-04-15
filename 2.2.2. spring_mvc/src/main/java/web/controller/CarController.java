@@ -20,7 +20,7 @@ import java.util.stream.Collectors;
 @Controller
 public class CarController {
 
-//private ServiceCarImp serviceCar = new ServiceCarImp();
+private ServiceCarImp serviceCar = new ServiceCarImp();
 
 @Autowired
 private List<Car> carList;
@@ -28,7 +28,7 @@ private List<Car> carList;
 
     @GetMapping("/cars")
     public String printCarTable(@RequestParam(defaultValue = "5") Integer count, ModelMap carModel) {
-        carModel.addAttribute("carList", carList.stream().limit(count).collect(Collectors.toList()));
+        carModel.addAttribute("carList", serviceCar.returnCars(count));
         return "cars";
     }
 
