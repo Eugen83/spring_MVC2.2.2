@@ -1,17 +1,19 @@
-package Service;
+package web.Service;
 
 import Model.Car;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
+
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-@Component
+@Service
 public class ServiceCarImp implements ServiceCar {
 
+
+    public ServiceCarImp() {
+    }
 
     public List<Car> listCar() {
         List<Car> car = new ArrayList<>();
@@ -24,9 +26,8 @@ public class ServiceCarImp implements ServiceCar {
 
     }
 
-   @Override
-
-      public List<Car> returnCars(int carCount) {
+    @Override
+    public List<Car> returnCars(int carCount) {
       return listCar().stream().limit(carCount).collect(Collectors.toList());
     }
 
